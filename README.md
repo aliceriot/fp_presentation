@@ -3,18 +3,20 @@
 A presentation about the more functional style we've been using for some
 of our JavaScript code at MIT ODL.
 
-Libraries we're currently using:
+The presentation is a markdown file, designed to be shown using
+[vimdeck](https://github.com/tybenz/vimdeck).
+
+## Libraries we're currently using:
 
 - [Ramda](http://ramdajs.com/)
 - [Sanctuary](https://sanctuary.js.org/)
 
-
-Resources:
+## Resources:
 
 - http://fr.umio.us/why-ramda/
 - something about monads!
 
-Topics covered in the presentation:
+## Topics covered in the presentation:
 
 - why functional style?
 - Currying
