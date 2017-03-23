@@ -23,14 +23,14 @@ let s1 = "muh string yyeah"
 let s2 = "muh other string"
 
 const hamming = () => {
-  let distance = 0;
+  let distance = 0
   for (let i = 0; i < s1.length; i++) {
     if ( s1[i] !== s2[i] ) {
       distance++
     }
   }
-  return distance;
-};
+  return distance
+}
 ```
 
 
@@ -41,24 +41,24 @@ let s1 = "muh string yyeah"
 let s2 = "muh other string"
 
 const hamming = () => {
-  let distance = 0;
+  let distance = 0
   for (let i = 0; i < s1.length; i++) {
     if ( s1[i] !== s2[i] ) {
       distance++
     }
   }
-  return distance;
-};
+  return distance
+}
 
 const hamming = (s1, s2) => {
-  let distance = 0;
+  let distance = 0
   for (let i = 0; i < s1.length; i++) {
     if ( s1[i] !== s2[i] ) {
       distance++
     }
   }
-  return distance;
-};
+  return distance
+}
 ```
 
 
@@ -122,6 +122,7 @@ const hamming = (s1, s2) => (
 zip s1 s2 | pairwiseDifferences
 ```
 
+
 # Composition
 
 zip s1 s2 | pairwiseDifferences
@@ -151,11 +152,64 @@ const hamming = R.compose(
 ```
 
 
+# Composition
+
+zip s1 s2 | pairwiseDifferences
+
+```javascript
+const hamming = R.compose(
+  R.reduce((acc, [c1, c2]) => c1 === c2 ? acc : acc + 1, 0),
+  R.zip
+)
+
+const hamming = (s1, s2) => {
+  let distance = 0
+  for (let i = 0; i < s1.length; i++) {
+    if ( s1[i] !== s2[i] ) {
+      distance++
+    }
+  }
+  return distance
+}
+```
+
+
 # Functional Style
 
-## Pointfree style
+# Currying
 
-## Currying
+```javascript
+let add = (x, y) => x + y
+```
+
+
+# Functional Style
+
+# Currying
+
+```javascript
+let add = (x, y) => x + y
+
+let addOne = x => x + 1
+```
+
+
+# Functional Style
+
+# Currying
+
+```javascript
+let add = (x, y) => x + y
+
+let addOne = add(1)
+
+addOne(2) // => 3
+```
+
+
+# Functional Style
+
+# Pointfree style
 
 
 # Monads
