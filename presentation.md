@@ -296,6 +296,8 @@ const stringify = R.map(x => String(x))
 
 # Monads
 
+# Maybe
+
 ```javascript
 // data Maybe a = Nothing | Just a
 
@@ -306,4 +308,21 @@ let nuthin = Nothing
 S.map(addOne, just) // Just(4)
 
 S.map(addOne, Nothing) // Nothing
+```
+
+
+# Monads
+
+# Maybe
+
+```javascript
+// data Either a b = Left a | Right b
+
+let right = Right(3)
+
+let left = Left('HI')
+
+S.map(x => x + 2, right) // Right(5)
+
+S.map(x => x + ' THERE', left) // Left('HI')
 ```
