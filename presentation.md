@@ -300,6 +300,15 @@ const stringify = R.map(x => String(x))
 
 ```javascript
 // data Maybe a = Nothing | Just a
+```
+
+
+# Monads
+
+# Maybe
+
+```javascript
+// data Maybe a = Nothing | Just a
 
 let just = Just(3)
 
@@ -313,7 +322,16 @@ S.map(addOne, Nothing) // Nothing
 
 # Monads
 
-# Maybe
+# Either
+
+```javascript
+// data Either a b = Left a | Right b
+```
+
+
+# Monads
+
+# Either
 
 ```javascript
 // data Either a b = Left a | Right b
