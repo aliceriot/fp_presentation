@@ -201,6 +201,19 @@ let addOne = x => x + 1
 ```javascript
 let add = (x, y) => x + y
 
+let addOne = x => x + 1
+
+let addOne = x => add(1, x)
+```
+
+
+# Functional Style
+
+# Currying
+
+```javascript
+let add = x => y => x + y
+
 let addOne = add(1)
 
 addOne(2) // => 3
@@ -209,10 +222,88 @@ addOne(2) // => 3
 
 # Functional Style
 
+# Currying
+
+```javascript
+let add = x => y => x + y
+
+let addOne = add(1)
+
+addOne(2) // => 3
+
+add(2)(3) // => 5
+```
+
+
+# Functional Style
+
+# Currying
+
+```javascript
+let add = R.curry((x, y) => x + y)
+
+let addOne = add(1)
+
+addOne(2) // => 3
+
+add(2,3) // => 5
+```
+
+
+# Functional Style
+
 # Pointfree style
+
+```javascript
+// (a -> b) -> List a -> List b
+R.map
+
+R.map(x => String(x), [1,2,3]) // ['1', '2', '3']
+```
+
+
+# Functional Style
+
+# Pointfree style
+
+```javascript
+// (a -> b) -> List a -> List b
+R.map
+
+R.map(x => String(x), [1,2,3]) // ['1', '2', '3']
+
+const stringify = xs => R.map(x => String(x), xs)
+```
+
+
+# Functional Style
+
+# Pointfree style
+
+```javascript
+// (a -> b) -> List a -> List b
+R.map
+
+R.map(x => String(x), [1,2,3]) // ['1', '2', '3']
+
+const stringify = xs => R.map(x => String(x), xs)
+
+// equivalent to
+
+const stringify = R.map(x => String(x))
+```
 
 
 # Monads
 
+```javascript
+// data Maybe a = Nothing | Just a
 
-# nifty tricks!
+let just = Just(3)
+
+let nuthin = Nothing
+
+S.map(addOne, just) // Just(4)
+
+S.map(addOne, Nothing) // Nothing
+```
